@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "Portal";
+}
+
+
+
+    <script src="~/Scripts/underscore-min.js"></script>
+
+
+    <script src="~/jQueryEasyUI/jquery.easyui.min.js"></script>
+    <link href="~/jQueryEasyUI/demo.css" rel="stylesheet" />
+    <link href="~/jQueryEasyUI/themes/icon.css" rel="stylesheet" />
+
+@*    <link href="~/jQueryEasyUI/themes/default/easyui.css" rel="stylesheet" />*@
+<link href="~/jQueryEasyUI/themes/built.css" rel="stylesheet" />
+    <script src="~/apps/portal/staar/w2.js"></script>
+    <script src="~/apps/portal/staar/algebra1.js"></script>
+    <script src="~/apps/portal/staar/bi.js"></script>
+    <script src="~/apps/portal/staar/grade3.js"></script>
+    <script src="~/apps/portal/staar/grade4.js"></script>
+    <script src="~/apps/portal/staar/grade5.js"></script>
+    <script src="~/apps/portal/staar/grade6.js"></script>
+    <script src="~/apps/portal/staar/grade7.js"></script>
+    <script src="~/apps/portal/staar/grade8.js"></script>
+    <script src="~/apps/portal/staar/r1.js"></script>
+    <script src="~/apps/portal/staar/r2.js"></script>
+    <script src="~/apps/portal/staar/us.js"></script>
+    <script src="~/apps/portal/staar/w1.js"></script>
+
+    <script src="~/apps/portal/campRef.js"></script>
+    <script src="~/apps/portal/student2.js"></script>
+    <script src="~/apps/portal/college.js"></script>
+    <script src="~/apps/portal/nonstaar.js"></script>
+    <script src="~/apps/portal/staff.js"></script>
+    <script src="~/apps/portal/districts2.js"></script>
+    <script src="~/apps/portal/categoryTable.js"></script>
+    <script src="~/apps/portal/collectionNames.js"></script>
+
+    <link href="~/_KendoNew/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/_KendoNew/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    <script src="~/_KendoNew/js/kendo.all.min.js"></script>
+
+    <script src="~/apps/portal/appMongo.js"></script>
+    <link href="~/Content/portal.css" rel="stylesheet" />
+	
+		<style>
+body{
+    margin:0px;
+    padding:0px;   
+}
+#districtTexter
+{
+    width:100%;
+}
+#variableSelector
+{
+    text-align:left;
+}
+#logoDiv
+{
+    width:222px;
+    margin:0 auto;
+}
+#logo
+{
+    //margin:10px;
+    //padding:10px;
+    display:inline;
+    width:220px;
+    margin:0 auto;
+    text-align:center;
+}
+#example
+{
+    border-width:0;
+    height:100%;
+    width:100%;
+}
+input[type=text]
+{
+    width:100%;
+}
+select
+{
+    width:100%;
+    text-align:center;
+}
+option
+{
+    text-align:center;
+}
+.k-grid  .k-grid-header  .k-header  .k-link {
+    height: auto;
+}
+  
+.k-grid  .k-grid-header  .k-header {
+    white-space: normal;
+}
+</style>
+
+
+
+<div ng-app="myApp">
+<div ng-controller="myC"  data-ng-init="init()">
+
+	<div class="easyui-layout">
+
+		<div data-options="region:'west',iconCls:'icon-ok',split:true" title="Variables"  style="width:800px;">
+			<div class="easyui-layout" data-options="fit:true">
+				<div data-options="region:'west',split:true,border:false" style="width:400px">
+                            <div id="logoDiv">
+                             <img id="logo" src="../../images/commit_logo_padded.png" alt="" />
+                            </div>
+                        <input id="districtTexter" type="text" ng-model="typedDistrict" />
+                        <ul id="districtSelector" style="overflow-y:auto">
+                            <li ng-repeat="district in districts | filter:typedDistrict" ng-click="clickDistrict(district.DISTRICT.toString())"  ng-disabled="isVariableSelected">{{district.DISTNAME}}</li>
+                        </ul>  
+				</div>
+				<div data-options="region:'center',border:false">
+                        <button style="width:49%" ng-click="downloadReport()">Download Report</button>
+                        <button style="width:49%" ng-click="clear()">Clear</button>
+                        <select id="yearSelector"  ng-change="changeYear(myYear)" ng-options="o as o for o in years" ng-model="myYear">
+                        </select>
+                        <select id="category" ng-init="firster()" ng-change="changeCategory(mySelect)" ng-options="o as o for o in categories"  ng-model="mySelect">
+ 
+                        </select>
+                        <input id="variableTexter" type="text" ng-model="typedVariable"/>
+                        <ul id="variableSelector"  style="overflow-y:auto">
+                             <li ng-repeat="variable in variables | filter: typedVariable"  ng-click="variableClick(variable)" >{{variable}}</li>
+                        </ul>
+
+
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center',split:true" title="Data"  style="overflow-y:auto">
+            <div id="example" class="k-content">
+                <div id="grid"></div>
+            </div>
+
+
+
+		</div>
+		
+		
+		
+	</div>
+
+
+</div>
+
+	<script>
+	    $(".easyui-layout").width(window.innerWidth);
+	    $(".easyui-layout").height(window.innerHeight);
+
+        $('li').click(function(){
+            $(this).css("background","blue");
+            console.log("hello");
+        });
+	</script>
+</div>

@@ -1,0 +1,5 @@
+D:\Dropbox\Visual Studio 2010\Projects\commitData\DashboardData\bin\Debug\DashboardData.dll
+D:\Dropbox\Visual Studio 2010\Projects\commitData\DashboardData\bin\Debug\DashboardData.pdb
+D:\Dropbox\Visual Studio 2010\Projects\commitData\DashboardData\obj\Debug\DashboardData.csprojResolveAssemblyReference.cache
+D:\Dropbox\Visual Studio 2010\Projects\commitData\DashboardData\obj\Debug\DashboardData.dll
+D:\Dropbox\Visual Studio 2010\Projects\commitData\DashboardData\obj\Debug\DashboardData.pdb

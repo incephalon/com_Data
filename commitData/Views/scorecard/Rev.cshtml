@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Rev";
+}
+
+		<link rel="stylesheet" href="~/Reveal/css/reveal.css">
+		<link rel="stylesheet" href="~/Reveal/css/theme/solarized.css" id="theme">
+
+<div class="reveal">
+	<div class="slides">
+
+
+                <section id="one">
+					
+				
+                        <div id="mapOne"></div>
+						
+				
+
+					
+				</section>
+
+
+
+
+ 
+                <section id="two">
+					
+				
+                       <div id="mapTwo"></div>
+						
+				
+
+					
+				</section>
+        </div>
+
+    </div>
+
+
+        <script src="~/Reveal/lib/js/head.min.js"></script>
+		<script src="~/Reveal/js/reveal.min.js"></script>
+
+<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../../Reveal/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+					{ src: '../../Reveal/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: '../../Reveal/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: '../../Reveal/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../Reveal/plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+					{ src: '../../Reveal/plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } },
+                    { src: '../../Scripts/d3.min.js', async: true, condition: function () { return !!document.body.classList; } }
+                    //{ src: 'myJS/processing-1.4.1.js', async: true, condition: function () { return !!document.body.classList; } },
+                    //{ src: 'myJS/three.js', async: true, condition: function () { return !!document.body.classList; } },
+                    //{ src: 'myJS/_kendo/js/kendo.all.min.js', async: true, condition: function () { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener('slidechanged', function () {
+
+			    if (event.currentSlide.id === 'one') {
+			        var svgPath = "../../images/scorecard/page_9.svg";
+
+
+			        d3.xml(svgPath, "image/svg+xml", function (xml) {
+			            var doccer = document.getElementById("mapOne");
+			            doccer.appendChild(xml.documentElement);
+                        //doccer.remove
+			            visualize();
+
+			        });
+			    }
+
+			    else if (event.currentSlide.id === 'two') {
+			        var svgPath = "../../images/scorecard/page_14.svg";
+
+
+			        d3.xml(svgPath, "image/svg+xml", function (xml) {
+			            var doccer = document.getElementById("mapTwo");
+			            doccer.appendChild(xml.documentElement);
+			            visualize();
+
+			        });
+			    }
+
+			});
+
+
+			function visualize() {
+
+			    //var svgContainer = d3.select("body").append("svg")
+
+			    var h = window.innerHeight - 50;
+			    var w = window.innerWidth - 100;
+
+			    var svg = d3.select("svg")
+                    //.attr("viewBox", "0 0 600 600")
+                    .attr("width", w)
+                    .attr("height", h);
+			    //.attr("preserveAspectRatio", "none");
+
+
+			    svg.selectAll("path")
+                        .on('click', function () {
+                            console.log("clicked");
+                            d3.select(this).attr('stroke', 'red');
+                            d3.select(this).attr('stroke-width', '2px');
+                        })
+                       .each(function (d, i) {
+                           d3.select(this)
+                               .transition()
+                               .duration(i * 17)
+                           //.style("fill","red")       
+                       });
+			}
+</script>

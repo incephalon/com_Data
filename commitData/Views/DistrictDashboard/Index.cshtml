@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Commit Districts";
+}
+
+@*<script>
+
+
+    $.ajax({
+        url: '/api/dashData',
+        //        async: false,
+        data:{district:"GRAND PRAIRIE ISD"},
+        success: function (data) {
+            origData = data;
+            //settings.staarData = data;
+            //console.log(data);
+        },
+        error: function (err) {
+            alert("error: " + err.responseText);
+        }
+    });
+
+
+</script>*@
+
+@*<script src="~/apps/districts/app.js"></script>*@
+
+<style>
+    img
+    {
+     height:150px;
+     //width:200px;
+    }
+</style>
+
+<div id="districts">
+    <a href="@Url.Action("Data", "DistrictDashboard", new {district="Coppell ISD"})" class="logo"><img src="../../images/districtLogos/coppell-isd.jpg" alt="" /></a>
+@*<a href="@Url.Action("Data", "DistrictDashboard", new {district='Coppell'});"><img src="../../images/districtLogos/coppell-isd.jpg" alt="" /></a>*@
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="DESOTO ISD"})"><img src="../../images/districtLogos/DeSoto.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Grand Prairie I"})"><img src="../../images/districtLogos/grand%20prairie.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Irving ISD"})"><img src="../../images/districtLogos/irving2.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Lancaster ISD"})"><img src="../../images/districtLogos/Lancaster.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Mesquite ISD"})"><img src="../../images/districtLogos/mesquite%20isd.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Richardson ISD"})"><img src="../../images/districtLogos/richardson.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="UPLIFT EDUCATIO"})"><img src="../../images/districtLogos/uplift.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Highland Park I"})"><img src="../../images/districtLogos/HP.jpg" alt="" /></a>
+<a href="@Url.Action("Data", "DistrictDashboard", new {district="Dallas ISD"})"><img src="../../images/districtLogos/DISD2.jpg" alt="" /></a>
+</div>
+
+@*<div ng-app="districtsApp">
+    <div ng-controller="myC">
+        <div>{{myVar}}</div>
+    </div>
+</div>*@
+

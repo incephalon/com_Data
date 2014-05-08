@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+<link href="~/Content/DC/main.css" rel="stylesheet" />
+<link href="~/Content/DC/ui.css" rel="stylesheet" />
+
+
+    <link href="_KendoNew/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="_KendoNew/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    <script src="_KendoNew/js/kendo.all.min.js"></script>
+
+<style>
+    body
+    {
+        //background:blue;
+        background-image:url('images/frontPage/donorsChooseBigT.png');
+        background-repeat: no-repeat;
+    }
+
+</style>
+
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div>
+            <div >
+                <section id="header" class="top-header"></section>
+
+                <aside id="nav-container">
+                    <div id="nav-wrapper">
+                                @Html.Partial("_side")
+                    </div>
+                </aside>
+            </div>
+
+            <div class="view-container">
+                <section  id="content" class="animate-fade-up"  style="padding:25px">
+                    @Html.Partial("_top")
+
+                    
+                    
+                </section>
+            </div>
+        </div>
+
+
+<script>
+    function createChart() {
+        $("#chart").kendoChart({
+            chartArea:{
+                background: "transparent"
+            },
+            title: {
+                text: "Gross domestic product growth /GDP annual %/"
+            },
+            legend: {
+                position: "top"
+            },
+            seriesDefaults: {
+                type: "column"
+            },
+            series: [{
+                name: "India",
+                data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855],
+                color:'teal'
+            }, {
+                name: "Russian Federation",
+                data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3],
+                color: 'Yellow'
+            }, {
+                name: "Germany",
+                data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995],
+                color: 'IndianRed'
+
+            }, {
+                name: "World",
+                data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727],
+                color:'Orange'
+            }],
+            valueAxis: {
+                labels: {
+                    format: "{0}%"
+                },
+                line: {
+                    visible: false
+                },
+                axisCrossingValue: 0
+            },
+            categoryAxis: {
+                categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                line: {
+                    visible: false
+                },
+                labels: {
+                    padding: { top: 165 }
+                }
+            },
+            tooltip: {
+                visible: true,
+                format: "{0}%",
+                template: "#= series.name #: #= value #"
+            }
+        });
+    }
+
+    $(document).ready(createChart);
+    $(document).bind("kendo:skinChange", createChart);
+    </script>
+    </body>
+
+
+@*<script>
+
+    $.ajax({
+
+        //		url: "http://api.donorschoose.org/common/json_feed.html?community=1059:2&APIKey=vmspm5ygamje&concise=true&description=true",
+        url: "http://api.donorschoose.org/common/json_feed.html?state=TX&Community=331:1&APIKey=vmspm5ygamje&concise=true&description=true",
+        //url: "http://api.donorschoose.org/common/json_feed.html?school=17191&APIKey=vmspm5ygamje",
+        dataType: 'jsonp',
+        success: function (results) {
+            console.log(results);
+            //			console.log(results['proposals'][0]['percentFunded']);
+            //			console.log(results['proposals'][0]['costToComplete']);
+        }
+    });
+</script>*@

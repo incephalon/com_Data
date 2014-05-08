@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+    <link href="~/_KendoNew/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/_KendoNew/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    <script src="~/_KendoNew/js/kendo.all.min.js"></script>    
+
+
+            <style>
+
+        body{
+            background:white;
+        }
+        img{
+
+            border:1px solid #58a5c6;
+            box-shadow: 10px 10px 5px #888888;
+            cursor:pointer;
+        }
+        #images{
+            margin-top:10px;
+            margin-left:10px;
+        }
+        #example{
+            margin-top:25px;
+            width:50%;
+        }
+        #buttons{
+            width:600px;
+            margin:0 auto;
+            margin-top:5px;
+        }
+        #header{
+            text-align:center;
+            font-family:'Times New Roman';
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <h1 id="header">TEKS</h1>
+            
+            <div id="buttons">
+                <a class="btn btn-primary" type="button" href="http://example.com">Kindergarten</a>
+                <button class="btn">Grade 1</button>
+                <button class="btn">Grade 2</button>
+                <button class="btn">Grade 3</button>
+                <button class="btn">Grade 4</button>
+                <button class="btn">Grade 5</button>
+
+
+            </div>
+            
+            <div id="images">
+            <img src="~/images/TEKS/reading%205.jpg"/>
+            <img src="~/images/TEKS/math.jpg"/>
+            <img src="~/images/TEKS/science.jpg"/>
+            <img src="~/images/TEKS/social%20studies%203.jpg"/>
+            <img src="~/images/TEKS/health.jpg"/>
+            
+            <img src="~/images/TEKS/PE.jpg"/>
+            <img src="~/images/TEKS/art.jpg"/>
+            <img src="~/images/TEKS/music.jpg"/>
+            <img src="~/images/TEKS/theatre%202.jpg"/>
+            <img src="~/images/TEKS/computer%202.jpg"/>
+        </div>
+        
+        
+         <div id="example" class="k-content">
+            <div id="organizer">
+                <ul id="panelbar">
+                <li class="k-state-active">
+                    <span class="k-link">1) Reading/Beginning Reading Skills/Print Awareness. Students Understand how English is written and printed. Students are expected to distinguish features of a sentence (eg Capitalization of first word, ending punctuation, commas, quotation marks).</span>
+                    <div style="padding: 10px;">
+                       <p>the first div</p>
+                    </div>
+                </li>
+                <li>
+                    2) Reading/Beginning Reading Skills/Phonics. Students use the relationships between letters and sounds, spelling patterns, and morphological analysis to decode written English. Students will continue to apply earlier standards with greater depth in increasingly more complex tests. Students are expected to:
+                    <ul>
+                        <li>New Business Plan</li>
+                        <li>
+                            Sales Forecasts
+                            <ul>
+                                <li>Q1 Forecast</li>
+                                <li>Q2 Forecast</li>
+                                <li>Q3 Forecast</li>
+                                <li>Q4 Forecast</li>
+                            </ul>
+                        </li>
+                        <li>Sales Reports</li>
+                    </ul>
+
+                </li>
+                <li>
+                    Programs
+                    <ul>
+                        <li>Monday</li>
+                        <li>Tuesday</li>
+                        <li>Wednesday</li>
+                        <li>Thursday</li>
+                        <li>Friday</li>
+                    </ul>
+                </li>
+                <li disabled="disabled">
+                    Communication
+                </li>
+            </ul>
+                <div id="bottom"></div>
+            </div>
+            </div>
+
+
+        
+    </body>  
+    
+      <script>
+          $(document).ready(function(){
+              var pager = $(document).width();
+              $('img').width(pager/10.5);
+              $('img').height(pager/10.5);
+              
+              //$( "#accordion" ).accordion();
+              
+               $("#panelbar").kendoPanelBar({
+                        expandMode: "single"
+                    });
+          });
+          
+          
+      </script>

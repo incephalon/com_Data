@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "commitData", "commitData\commitData.csproj", "{E190F6FB-DB2A-475C-9212-E11816F72CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardData", "DashboardData\DashboardData.csproj", "{8EF2F5C8-CA02-4078-BFAB-2DB1977A8FAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E190F6FB-DB2A-475C-9212-E11816F72CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E190F6FB-DB2A-475C-9212-E11816F72CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E190F6FB-DB2A-475C-9212-E11816F72CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E190F6FB-DB2A-475C-9212-E11816F72CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF2F5C8-CA02-4078-BFAB-2DB1977A8FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF2F5C8-CA02-4078-BFAB-2DB1977A8FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF2F5C8-CA02-4078-BFAB-2DB1977A8FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF2F5C8-CA02-4078-BFAB-2DB1977A8FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*//put the Texas Round Map here - and then surround it with whichever visuals to use?
+
+//preK gaps
+//literacy_heatmap*@
+<script src="~/Scripts/d3.min.js"></script>
+<style type="text/css">
+    svg {
+        //border: 1px solid #dddddd;
+        margin:0 auto;
+        width:500px;
+    }
+    body
+    {
+        background:#041424;
+    }
+</style>
+
+<script type="text/javascript">
+    var svgPath = "../../images/SVGs/CountyMap.svg";
+
+    d3.xml(svgPath, "image/svg+xml", function(xml) {
+        document.body.appendChild(xml.documentElement);
+        visualize();        
+
+    });
+
+    function visualize() {
+
+        var svg = d3.select("svg");
+
+
+  
+            svg.selectAll("path")
+               .each(function(d, i) { 
+                   d3.select(this)
+                       .transition()
+                       .duration(i*17)
+                       .style("fill","red")       
+                }); 
+  
+    }
+
+</script>
+
+
+</body>

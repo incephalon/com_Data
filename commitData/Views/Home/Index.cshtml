@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Commit! Data";
+    Layout = "";
+}
+@*<title>Commit! Data</title>*@
+<link href="~/Content/frontPage.css" rel="stylesheet" />
+<style>
+body{
+background:#041424;
+}
+#logo{
+margin-top:25px;
+margin-bottom:25px;
+}
+h2
+{
+    text-align:center;
+}
+p
+{
+    text-align:center;
+}
+body{
+    width:1200px;
+    margin:0 auto;
+
+}
+</style>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+
+
+<body class="demos ">
+
+@*<div id="content">*@
+
+
+      <img id="logo" src='images/commit_logo.png'/>
+
+
+<div id="container" class="clearfix">
+
+  <div class="box col2">
+    <p><img src='images/frontPage/commitFooterLogo2.png'></p>
+      <p><a href="https://twitter.com/commit2dallas" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @@commit2dallas</a></p>
+    
+    <p><hr></hr></p>
+    <p><h2><a href='http://www.commit2dallas.org' target="_blank">Commit!</a></h2></p>
+      <p>Commit! is a growing partnership of over 100 organizations working together to ensure that all students in Dallas County have the opportunity to realize their full potential beyond high school, in college and/or the global workforce.</p>
+  </div>
+
+<div class="box col2">
+
+    <p><a href='/Visuals'>
+        <img src='images/frontPage/TexasCounties_.png'/></a></p>
+    <p>Browse and assorted collection of data visulizations</p>
+    <h2><a href="/Visuals">Texas Visualized</a></h2>
+</div>
+
+  <div class="box col2">
+    <p><img src='images/frontPage/fafsa.png'></p>
+    <p><hr></hr></p>
+    <h2><a href='/fafsa'>FAFSA Numbers</a></h2>
+  </div>
+
+
+@*  <div class="box col2">
+    <p><img src="http://1.bp.blogspot.com/-ckE5rG01oQA/UBeHe476pfI/AAAAAAAACX4/dWa6yTMIGKs/s1600/1.png"/></p>
+     <p><hr></hr></p>
+    <p><h2><a href="http://www.wtfdiary.com/2012/07/how-to-upgrade-your-mac-to-os-x.html">How to upgrade your Mac to OS X Mountain Lion</a></h2></p>
+  </div>*@
+
+  <div class="box col2">
+    <p><a href='/Portal'><img src='images/frontPage/spreadsheet.PNG'></a></p>
+    <p><a href='/Portal'><h2>Data Portal</h2></a></p>
+
+    <p>Download demographic or STAAR data for your district or Campus and export to Excel for analysis</p>
+  </div>
+
+  <div class="box col2">
+    <p><a href='/DistrictDashboard'><img src='images/frontpage/districtDashboard.png'/></a></p>
+    <p><a href='/DistrictDashboard'><h2>District Dashboards</h2></a></p>
+
+    <p>Data Dashboards Accessible only by our District Partners. Take a look at achievement relative to poverty.</p>
+</div>
+
+
+
+  <div class="box col2">
+
+    <p><a href='/naep'><img src='images/frontPage/us.jpg'></a></p>
+    <p><hr></hr></p>
+    <h2><a href='/naep'>NAEP Data</a></h2>
+      <p>The National Assessment of Educational Progress is the Nation's Report Card. Look at the Longitudinal Data by state here.</p>
+  </div>
+
+<div class="box col2">
+
+    <p><a href='/maps'><img src='images/frontPage/DallasCounty.PNG'></a></p>
+    <p><hr></hr></p>
+    <p><a href='/maps'></a></p>
+    
+  </div>
+
+<div class="box col2">
+
+    <p><a href='/Districts'><img src='images/frontPage/literacy_heatmap.PNG'></a></p>
+      <p><hr></hr></p>
+    <h2><a href='/Districts'>District Snapshots</a></h2>
+    <p>Our district partners at a glance.</p>
+  </div>
+
+
+  <div class="box col2">
+    <p><a href='/scorecard'>
+        <img src="images/frontPage/scorecard.jpg"></a></p>
+<p><h2><a href='/scorecard'>Community Scorecard</a></h2></p>
+      <p>Rather than comparing one district to another or one school to another, our scorecard focuses on what is most important: our collective ability to support Dallas County’s 800,000+ students on their journey from cradle to career.</p>
+  </div>
+
+
+  <div class="box col2">
+    <p><a href='/DonorsChoose'><img src='images/frontPage/donorsChoose.png'/></a></p>
+    <p><a href='/DonorsChoose'><h2>Donors Choose Projects</h2></a><p>
+
+    <p><hr></hr></p>
+      <p>Donors Choose is an innovative platform that allows teachers to crowdfund for educational materials and projects to aid their students' success. Look at projects and data for Dallas County</p>
+
+
+  </div>
+
+
+  <div>
+    <div class="box col2">
+      <p><a href='/TEKS/Index'><img src='images/frontPage/teks.png'/></a></p>
+      <p><h2><a href='/TEKS/Index'>TEKS</a></h2></p>
+        <p>Texas Essential Knowledge and Skills are the standards for what students should know and be able to do in each grade and subject. Browse them here.</p>
+    </div>
+
+
+
+</div> <!-- #container -->
+
+
+    <script src="~/Scripts/jquery-1.9.0.min.js"></script>
+<script src="~/Scripts/jquery.masonry.min.js"></script>
+
+<script>
+  $(function(){
+
+    $('#container').masonry({
+      itemSelector: '.box'
+    });
+
+  });
+</script>
+<script>
+  $(function(){
+
+    var $container = $('#container');
+
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : '.box'
+      });
+    });
+
+  });
+</script>
+
+
+  </div> <!-- #content -->
+
+
+</body>

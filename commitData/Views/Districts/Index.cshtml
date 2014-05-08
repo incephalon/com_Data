@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*//put map with districts on the left, then stats on the right
+//schools
+//number of students
+//# of teachers
+//poverty*@
+
+@*//Hockaday
+//St. Mark's
+//Greenhill
+//Harmony
+//Uplift
+//J Erik Jonsson School
+//Parish Episcopal School
+//Shelton
+//Texans Can Academies
+//Village Tech Schools
+//International Leadership of Texas
+//Kipp DFW*@
+
+
+<script src="~/Scripts/d3.min.js"></script>
+<style type="text/css">
+    svg {
+        //border: 1px solid #dddddd;
+        //margin:0 auto;
+        //width:500px;
+        //margin-left:800px;
+    }
+    body
+    {
+        //background:#041424;
+        background:beige;
+    }
+    #map
+    {
+        //width:500px;
+        //margin:0 auto;
+        //margin-top:200px;
+    }
+    #districtName
+    {
+        float:right;
+    }
+</style>
+
+<body>
+<img src="../../images/commit_logo_padded.png" alt="" />
+
+    <div id="map"></div>
+    <h1 id="districtName">Dallas ISD</h1>
+<script type="text/javascript">
+    var svgPath = "../../images/SVGs/DistrictsBetter2.svg";
+
+    d3.xml(svgPath, "image/svg+xml", function (xml) {
+        var doccer = document.getElementById("map");
+        doccer.appendChild(xml.documentElement);
+        //document.body.appendChild(xml.documentElement);
+        //$('#map').css('margin-top', '200px');
+
+        $('svg').width(800);
+        $('svg').height(800);
+
+        visualize();
+     
+    });
+
+    function visualize() {
+
+        //var svgContainer = d3.select("body").append("svg")
+
+        var svg = d3.select("svg")
+            //.attr("viewBox", "0 0 600 600")
+            .attr("width", "600")
+            .attr("height", "600");
+            //.attr("preserveAspectRatio", "none");
+
+  
+        svg.selectAll("path")
+                .on('click', function(){
+                    console.log("clicked");
+                    d3.select(this).attr('stroke', 'red');
+                    d3.select(this).attr('stroke-width', '2px');
+                })
+               .each(function(d, i) { 
+                   d3.select(this)
+                       .transition()
+                       .duration(i*17)
+                       //.style("fill","red")       
+                }); 
+  
+
+
+            
+    }
+
+    
+
+
+
+</script>
+
+
+</body>
