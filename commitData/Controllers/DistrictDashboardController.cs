@@ -12,39 +12,60 @@ namespace commitData.Controllers
         //
         // GET: /DistrictDashboard/
 
+        private static readonly Dictionary<string, string> DistrictPasswords = new Dictionary<string, string>
+            {
+                {"Coppell ISD", "123"},
+                {"DESOTO ISD",          "456"},
+                {"Grand Prairie I",     "789"},
+                {"Irving ISD",          "123"},
+                {"Lancaster ISD",       "123"},
+                {"Mesquite ISD",        "123"},
+                {"Richardson ISD",      "123"},
+                {"UPLIFT EDUCATIO",     "123"},
+                {"Highland Park I",     "123"},
+                {"Dallas ISD",          "123"},
+            };
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult SignIn(string returnUrl)
+        public ActionResult SignIn(string district)
         {
             //send the district? (can I do this with the pwd in the other one?)
 
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl = district;
             return View();
         }
 
-        [SimpleMembership]
+        //[SimpleMembership]
         public ActionResult Data(string district)
         {
+            var token = Session["myApp-Authentication"];
+            if (token == null || !DistrictPasswords.ContainsKey(district) ||
+                token.ToString() != DistrictPasswords[district])
+            {
+                return RedirectToAction("SignIn", new {district = district});
+            }
+
             ViewBag.district = district;
-            var x = district;
+            //var x = district;
             return View();
         }
 
         [HttpPost]
-        public ActionResult SignIn(string returnUrl, string pwd)
+        public ActionResult SignIn(string district, string pwd)
         {
-            if (pwd == "123")
-            {
-                Session["myApp-Authentication"] = "123";
+            //if (pwd == "123")
+            //{
+            Session["myApp-Authentication"] = pwd;
+            return RedirectToAction("Data", new { district = district });
+            //return Redirect(returnUrl);
+            //}
 
-                return Redirect(returnUrl);
-            }
-
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            //ViewBag.ReturnUrl = returnUrl;
+            //return View();
         }
 
 
