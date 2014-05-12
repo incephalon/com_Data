@@ -17,14 +17,15 @@ namespace commitData.Controllers
             return View();
         }
 
-        public ActionResult SignIn()
+        public ActionResult SignIn(string returnUrl)
         {
             //send the district? (can I do this with the pwd in the other one?)
 
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
-       [SimpleMembership]
+        [SimpleMembership]
         public ActionResult Data(string district)
         {
             ViewBag.district = district;
@@ -33,13 +34,16 @@ namespace commitData.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignIn(string pwd)
+        public ActionResult SignIn(string returnUrl, string pwd)
         {
             if (pwd == "123")
             {
                 Session["myApp-Authentication"] = "123";
-                return RedirectToAction("Data");
+
+                return Redirect(returnUrl);
             }
+
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 

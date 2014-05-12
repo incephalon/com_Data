@@ -3,22 +3,21 @@
 }
 
 <style>
-    body
-    {
-        background:#041424;
+    body {
+        background: #041424;
     }
-    form
-    {
-        height:100px;
-        width:300px;
-        margin:0 auto;
+
+    form {
+        height: 100px;
+        width: 300px;
+        margin: 0 auto;
     }
-    h2
-    {
-                height:100px;
-        width:300px;
-        margin:0 auto;
-        color:white;
+
+    h2 {
+        height: 100px;
+        width: 300px;
+        margin: 0 auto;
+        color: white;
     }
 </style>
 
@@ -26,12 +25,13 @@
 
 @using (Html.BeginForm())
 { 
-    <input type="text" name="pwd" id="pwd" placeholder="password..."/> <input type="submit" value="Sign in" />
+    <input type="hidden" name="returnUrl" id="url" value="@ViewBag.ReturnUrl"/>
+    <input type="text" name="pwd" id="pwd" placeholder="password..." /> <input type="submit" value="Sign in" />
 }
 
 
 <script>
 
-    $('form').css('margin-top', (window.innerHeight/2)-150);
+    $('form').css('margin-top', (window.innerHeight / 2) - 150);
 
 </script>

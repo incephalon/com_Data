@@ -33,3 +33,38 @@ D:\Dropbox\Visual Studio 2010\Projects\commitData\commitData\bin\MongoDB.Driver.
 D:\Dropbox\Visual Studio 2010\Projects\commitData\commitData\bin\MongoDB.Bson.xml
 D:\Dropbox\Visual Studio 2010\Projects\commitData\commitData\bin\MongoDB.Driver.xml
 D:\Dropbox\Visual Studio 2010\Projects\commitData\commitData\obj\Debug\commitData.csprojResolveAssemblyReference.cache
+C:\GitHub\commitData\commitData\bin\commitData.dll
+C:\GitHub\commitData\commitData\bin\commitData.pdb
+C:\GitHub\commitData\commitData\bin\Antlr3.Runtime.dll
+C:\GitHub\commitData\commitData\bin\EntityFramework.dll
+C:\GitHub\commitData\commitData\bin\Microsoft.Web.Infrastructure.dll
+C:\GitHub\commitData\commitData\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\GitHub\commitData\commitData\bin\MongoDB.Bson.dll
+C:\GitHub\commitData\commitData\bin\MongoDB.Driver.dll
+C:\GitHub\commitData\commitData\bin\Newtonsoft.Json.dll
+C:\GitHub\commitData\commitData\bin\System.Net.Http.Formatting.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Http.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Http.WebHost.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Mvc.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Optimization.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Providers.dll
+C:\GitHub\commitData\commitData\bin\System.Web.Razor.dll
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.Deployment.dll
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.dll
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.Razor.dll
+C:\GitHub\commitData\commitData\bin\WebGrease.dll
+C:\GitHub\commitData\commitData\bin\MongoDB.Bson.xml
+C:\GitHub\commitData\commitData\bin\MongoDB.Driver.xml
+C:\GitHub\commitData\commitData\bin\Newtonsoft.Json.xml
+C:\GitHub\commitData\commitData\bin\EntityFramework.xml
+C:\GitHub\commitData\commitData\bin\System.Net.Http.Formatting.xml
+C:\GitHub\commitData\commitData\bin\System.Web.Http.xml
+C:\GitHub\commitData\commitData\bin\System.Web.Http.WebHost.xml
+C:\GitHub\commitData\commitData\bin\System.Web.Mvc.xml
+C:\GitHub\commitData\commitData\bin\System.Web.Razor.xml
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.xml
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.Deployment.xml
+C:\GitHub\commitData\commitData\bin\System.Web.WebPages.Razor.xml
+C:\GitHub\commitData\commitData\obj\Debug\commitData.csprojResolveAssemblyReference.cache
+C:\GitHub\commitData\commitData\obj\Debug\commitData.dll
+C:\GitHub\commitData\commitData\obj\Debug\commitData.pdb
